@@ -56,15 +56,15 @@ public class _Generator {
 
 	public static void main(String[] args) {
 		// base model 所使用的包名
-		String baseModelPackageName = "com.jfinal.club.common.model.base";
+		String baseModelPackageName = "com.henry.common.model.base";
 		// base model 文件保存路径
 		String baseModelOutputDir = PathKit.getWebRootPath()
-				+ "/src/main/java/com/jfinal/club/common/model/base";
+				+ "/src/main/java/com/henry/common/model/base";
 
 		System.out.println("输出路径："+ baseModelOutputDir);
 
 		// model 所使用的包名 (MappingKit 默认使用的包名)
-		String modelPackageName = "com.jfinal.club.common.model";
+		String modelPackageName = "com.henry.common.model";
 		// model 文件保存路径 (MappingKit 与 DataDictionary 文件默认保存路径)
 		String modelOutputDir = baseModelOutputDir + "/..";
 

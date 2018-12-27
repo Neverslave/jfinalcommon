@@ -1,6 +1,6 @@
 #主要配置
-jdbcUrl=jdbc:mysql://localhost/jfinal?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
-user=root
+jdbcUrl=jdbc:mysql://47.100.23.51/myblog?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+user=zhu
 password=zhuwanqi19940509
 devMode=true
 engineDevMode=true
