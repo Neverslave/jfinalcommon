@@ -1,6 +1,5 @@
 package com.henry.Interceptor;
 
-import com.henry.common.kit.IpKit;
 import com.henry.common.model.Account;
 import com.henry.login.LoginService;
 import com.jfinal.aop.Interceptor;
@@ -17,7 +16,7 @@ import com.jfinal.core.Controller;
 public class LoginSessionInterceptor implements Interceptor {
     @Override
     public void intercept(Invocation inv) {
-        Account loginAccount = null;
+        Account loginAccount ;
         Controller c = inv.getController();
         String sessionId = c.getCookie(LoginService.sessionIdName);
         if (sessionId != null) {

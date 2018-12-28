@@ -21,22 +21,19 @@ layui.config({
         }
     }).resize();
 
-    function updateCaptcha() {
-        $("#captcha").attr("src", "/login/captcha?v=" + Math.random());
-        $('#captchaInput').val("");
 
-    }
 
 
     //登录按钮事件
     form.on("submit(login)", function (data) {
         $.ajax({
-            url: "/login",
+            url: "/login/doLogin",
             dataType: "json",
-            data: data,
+            data: data.field,
+            method:"post",
             success: function (ret) {
                 if (ret.state === "ok") {
-                    window.location.href = '/admin/page/'
+                    window.location.href = '/admin/page/';
                     return false;
                 }
 
@@ -53,7 +50,7 @@ layui.config({
                         updateCaptcha();
 
                     })
-                    return false;
+
                 }
 
                 //validator层校验失败
@@ -71,14 +68,25 @@ layui.config({
 
                 }
             },
-            error: function () {
+            error: function (ret) {
                 alert("暂时无法登录")
+
+            },
+            complete:function (ret) {
+
 
             }
         })
 
 
-    })
 
+    });
+    function updateCaptcha() {
+        $("#captcha").attr("src", "/login/captcha?v=" + Math.random());
+        $('#captchaInput').val("");
 
-    })
+    }
+
+  $("#captcha").click(updateCaptcha);
+
+    });

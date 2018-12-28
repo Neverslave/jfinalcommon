@@ -8,6 +8,7 @@ import com.jfinal.validate.Validator;
 public class LoginValidator extends Validator {
     @Override
     protected void validate(Controller c) {
+        setShortCircuit(true);
         validateCaptcha("captcha", "captchaMsg", "验证码不正确");
     }
 
