@@ -3,12 +3,14 @@ package com.henry.common;
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.wall.WallFilter;
 import com.henry.Interceptor.LoginSessionInterceptor;
+import com.henry.common.model._MappingKit;
 import com.jfinal.config.*;
 import com.jfinal.json.MixedJsonFactory;
 import com.jfinal.kit.Prop;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
+import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.jfinal.template.Engine;
 
 import java.sql.Connection;
@@ -56,9 +58,12 @@ public class JfinalConfig extends JFinalConfig {
         me.add(druidPlugin);
 
         ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
-        arp.setTransactionLevel(Connection.TRANSACTION_READ_COMMITTED);
-
+        me.add(arp);
+        _MappingKit.mapping(arp);
+        arp.setShowSql(p.getBoolean("devMode", true));
+        arp.getEngine().setToClassPathSourceFactory();
         arp.addSqlTemplate("/sql/sqls.sql");
+        me.add(new EhCachePlugin());
 
     }
 

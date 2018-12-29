@@ -6,6 +6,6 @@ import com.jfinal.kit.HashKit;
 public class Main {
     public static void main(String[] args) {
         JFinal.start("src/main/webapp",80,"/",5);
-        //System.out.println(HashKit.sha256(""));
+        //System.out.println(HashKit.sha256("zhuzhuwanqi19940509"));
     }
 }

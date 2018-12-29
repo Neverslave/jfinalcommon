@@ -16,10 +16,10 @@ public class LoginController  extends Controller {
         render("login.html");
     }
 
+
     /**
      * 登录
      * */
-
     @Before(LoginValidator.class)
     public void doLogin(){
         String username = getPara("username");

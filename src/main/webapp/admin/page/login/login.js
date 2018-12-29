@@ -33,7 +33,7 @@ layui.config({
             method:"post",
             success: function (ret) {
                 if (ret.state === "ok") {
-                    window.location.href = '/admin/page/';
+                    window.location.href = '/admin';
                     return false;
                 }
 
@@ -54,14 +54,7 @@ layui.config({
                 }
 
                 //validator层校验失败
-                if (ret.userNameMsg) {
-                    $('#responseMsg').html(ret.userNameMsg)
 
-                }
-                if (ret.passwordMsg) {
-                    $('#responseMsg').html(ret.passwordMsg)
-
-                }
                 if (ret.captchaMsg) {
                     updateCaptcha();
                     $('#responseMsg').html(ret.captchaMsg)

@@ -22,8 +22,11 @@ public class LoginService {
     // "myBlog" 仅用于 cookie 名称，其它地方如 cache 中全部用的 "sessionId" 来做 key
     public static final String sessionIdName = "myBlog";
 
+    /**
+     * 登录成功返回 sessionId 与 loginAccount，否则返回一个 msg
+     */
     public Ret login(String userName, String password, String loginIp){
-        Account loginAccount = accountDao.findFirst("select * from account where userName = ?",userName);
+        Account loginAccount = accountDao.findFirst("select * from account where userName = ? limit 1",userName);
 
         if(loginAccount == null){
             return Ret.fail("msg","用户名或密码不正确");
@@ -31,8 +34,10 @@ public class LoginService {
 
         String salt = loginAccount.getSalt();
         String hashedPass = HashKit.sha256(salt+password);
+        System.out.println(hashedPass);
+        String pwd = loginAccount.getPassword();
         //密码错误
-        if(loginAccount.getPassword()!= hashedPass){
+        if(!pwd.equals(hashedPass) ){
             return Ret.fail("msg","用户名或密码不正确");
 
         }
