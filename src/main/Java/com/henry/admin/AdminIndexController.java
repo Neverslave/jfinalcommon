@@ -1,4 +1,4 @@
-package com.henry.Admin;
+package com.henry.admin;
 
 import com.henry.Interceptor.AdminInterceptor;
 import com.henry.common.BaseController;
