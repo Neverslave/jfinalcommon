@@ -15,6 +15,7 @@ public class NavController extends BaseController {
     public void index(){
         List<Nav> navList = srv.getNavs();
         String nav = JsonKit.toJson(navList); //转为json字符串
+        System.out.println(nav);
         renderJson(nav);
     }
 }

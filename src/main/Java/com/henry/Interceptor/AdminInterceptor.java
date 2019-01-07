@@ -17,16 +17,14 @@ public class AdminInterceptor implements Interceptor
     public void intercept(Invocation inv) {
         Controller c = inv.getController();
        Account account = c.getAttr(LoginService.loginAccountCacheName);
+
        if(account == null){
            c.redirect("/login");
        }
+       else{
 
-
-
-
-
-
-        inv.invoke();
+           inv.invoke();
+       }
 
     }
 }

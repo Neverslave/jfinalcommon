@@ -23,7 +23,7 @@ public class NavService {
      * */
     public List<Nav> getNavs(){
         List<Nav> childrenNavList =navDao.find("select * from nav where parentId != '' ");
-         List<Nav>navList = getParentNav();
+         List<Nav> navList = getParentNav();
         for (int i = 0; i <childrenNavList.size() ; i++) {
           Integer id = childrenNavList.get(i).getParentId();
             for (int j = 0; j < navList.size(); j++) {

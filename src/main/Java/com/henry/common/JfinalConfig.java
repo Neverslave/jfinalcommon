@@ -5,6 +5,7 @@ import com.alibaba.druid.wall.WallFilter;
 import com.henry.Interceptor.LoginSessionInterceptor;
 import com.henry.common.model._MappingKit;
 import com.jfinal.config.*;
+import com.jfinal.json.FastJson;
 import com.jfinal.json.MixedJsonFactory;
 import com.jfinal.kit.Prop;
 import com.jfinal.kit.PropKit;
@@ -25,7 +26,7 @@ public class JfinalConfig extends JFinalConfig {
     @Override
     public void configConstant(Constants me) {
         me.setDevMode(p.getBoolean("devMode", false));
-        me.setJsonFactory(MixedJsonFactory.me());
+        me.setJsonFactory(FastJson::new);
 
         // 支持 Controller、Interceptor 之中使用 @Inject 注入业务层，并且自动实现 AOP
         me.setInjectDependency(true);
@@ -45,6 +46,7 @@ public class JfinalConfig extends JFinalConfig {
      */
     @Override
     public void configEngine(Engine me) {
+
 
 
     }
