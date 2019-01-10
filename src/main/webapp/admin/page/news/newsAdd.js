@@ -1,14 +1,13 @@
 layui.config({
 }).use(['form','layer','jquery','layedit','laydate'],function(){
-	var form = layui.form(),
+	var form = layui.form,
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
 		laypage = layui.laypage,
 		layedit = layui.layedit,
 		laydate = layui.laydate,
 		$ = layui.jquery;
 
-	//创建一个编辑器
- 	var editIndex = layedit.build('news_content');
+
  	var addNewsArray = [],addNews;
  	form.on("submit(addNews)",function(data){
  		//是否添加过信息
@@ -39,5 +38,11 @@ layui.config({
         },2000);
  		return false;
  	})
+
+
 	
 })
+
+var E = window.wangEditor;
+var editor = new E('#toolbar','#news_content');
+editor.create();

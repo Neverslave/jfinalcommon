@@ -1,13 +1,13 @@
 layui.config({
 }).use(['form','layer','jquery','laypage'],function(){
-	var form = layui.form(),
+	var form = layui.form,
 		layer = parent.layer === undefined ? layui.layer : parent.layer,
 		laypage = layui.laypage,
 		$ = layui.jquery;
 
 	//加载页面数据
 	var newsData = '';
-	$.get("../../json/newsList.json", function(data){
+	$.get("/admin/newslist", function(data){
 		var newArray = [];
 		//单击首页“待审核文章”加载的信息
 		if($(".top_tab li.layui-this cite",parent.document).text() == "待审核文章"){
@@ -32,6 +32,7 @@ layui.config({
 			}
 			//执行加载数据的方法
 			newsList();
+			form.render();
 		}
 	})
 
@@ -211,7 +212,7 @@ layui.config({
 		}else{
 			$(data.elem).parents('table').find('thead input#allChoose').get(0).checked = false;
 		}
-		form.render('checkbox');
+		//form.render('checkbox');
 	})
 
 	//是否展示
@@ -264,7 +265,7 @@ layui.config({
 			if(currData.length != 0){
 				for(var i=0;i<currData.length;i++){
 					dataHtml += '<tr>'
-			    	+'<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>'
+			    	+'<td><input type="checkbox" class="layui-unselect layui-form-checkbox" lay-skin="primary" ></td>'
 			    	+'<td align="left">'+currData[i].newsName+'</td>'
 			    	+'<td>'+currData[i].newsAuthor+'</td>';
 			    	if(currData[i].newsStatus == "待审核"){
@@ -293,13 +294,14 @@ layui.config({
 		if(that){
 			newsData = that;
 		}
-		laypage({
+		laypage.render({
 			cont : "page",
 			pages : Math.ceil(newsData.length/nums),
 			jump : function(obj){
 				$(".news_content").html(renderDate(newsData,obj.curr));
+				form.render();
 				$('.news_list thead input[type="checkbox"]').prop("checked",false);
-		    	form.render();
+
 			}
 		})
 	}

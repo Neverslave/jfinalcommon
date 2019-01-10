@@ -44,7 +44,7 @@ public class LoginService {
 
         String sessionId = StrKit.getRandomUUID();
 
-        long liveSeconds = 120*60;
+        long liveSeconds = 60*60*24;
         int maxAgeInSeconds = (int)liveSeconds;
         long expireAt = System.currentTimeMillis()+(liveSeconds*1000);
 

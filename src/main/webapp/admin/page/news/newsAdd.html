@@ -9,7 +9,8 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="/assets/layui/css/layui.css" media="all" />
+    <script src="/assets/js/wangEditor.min.js"></script>
 </head>
 <body class="childrenBody">
 	<form class="layui-form">
@@ -62,12 +63,9 @@
 				<textarea placeholder="请输入内容摘要" class="layui-textarea"></textarea>
 			</div>
 		</div>
-		<div class="layui-form-item">
-			<label class="layui-form-label">文章内容</label>
-			<div class="layui-input-block">
-				<textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="news_content"></textarea>
-			</div>
-		</div>
+		<div  id="toolbar" style="border: 1px solid #e6e6e6;min-height:30px"></div>
+		<div  id="news_content" style="min-height: 400px;border: 1px solid #e6e6e6;margin-top: 10px; " ></div>
+
 		<div class="layui-form-item">
 			<div class="layui-input-block">
 				<button class="layui-btn" lay-submit="" lay-filter="addNews">立即提交</button>
@@ -75,7 +73,7 @@
 		    </div>
 		</div>
 	</form>
-	<script type="text/javascript" src="../../layui/layui.js"></script>
-	<script type="text/javascript" src="newsAdd.js"></script>
+	<script type="text/javascript" src="/assets/layui/layui.js"></script>
+	<script type="text/javascript" src="/admin/page/news/newsAdd.js"></script>
 </body>
 </html>

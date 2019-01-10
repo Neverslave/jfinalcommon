@@ -7,3 +7,8 @@
 #namespace("nav")
 #include("nav.sql")
 #end
+
+
+#namespace("news")
+#include("news.sql")
+#end
