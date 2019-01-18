@@ -1,6 +1,0 @@
-
-2019-01-09 11:12:10
-[WARN]-[Thread: qtp1588970020-20]-[com.jfinal.plugin.ehcache.CacheKit.getOrAddCache()]: Could not find cache config [loginAccount], using default.
-
-2019-01-09 11:54:55
-[WARN]-[Thread: qtp1588970020-15]-[com.jfinal.plugin.ehcache.CacheKit.getOrAddCache()]: Could not find cache config [loginAccount], using default.
