@@ -21,7 +21,7 @@ layui.config({
 		accept:'file',
 		multiple:true,
 		auto:false,
-		//bindAction:,
+		bindAction:'#testListAction',
 		choose:function (obj) {
             var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
             //读取本地文件
@@ -53,7 +53,7 @@ layui.config({
         }
         ,done: function(res, index, upload){
             if(res.code == 0){ //上传成功
-                var tr = demoListView.find('tr#upload-'+ index)
+                var tr = uploadList.find('tr#upload-'+ index)
                     ,tds = tr.children();
                 tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
                 tds.eq(3).html(''); //清空操作
@@ -62,7 +62,7 @@ layui.config({
             this.error(index, upload);
         }
         ,error: function(index, upload){
-            var tr = demoListView.find('tr#upload-'+ index)
+            var tr = uploadList.find('tr#upload-'+ index)
                 ,tds = tr.children();
             tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
             tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传

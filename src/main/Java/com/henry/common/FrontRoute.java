@@ -7,5 +7,6 @@ public class FrontRoute extends Routes {
     @Override
     public void config() {
         add("/", IndexController.class);
+
     }
 }
