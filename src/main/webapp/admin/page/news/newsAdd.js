@@ -17,7 +17,7 @@ layui.config({
 	var uploadList =$('#uploadList');
 	var uploadListIns = upload.render({
 		elem:'#upload',
-		url:'/upload',
+		url:'/upload/',
 		accept:'file',
 		multiple:true,
 		auto:false,

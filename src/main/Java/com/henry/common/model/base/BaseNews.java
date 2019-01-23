@@ -17,12 +17,12 @@ public abstract class BaseNews<M extends BaseNews<M>> extends Model<M> implement
 		return getInt("id");
 	}
 
-	public void setContent(java.lang.String content) {
+	public void setContent(byte[] content) {
 		set("content", content);
 	}
 	
-	public java.lang.String getContent() {
-		return getStr("content");
+	public byte[] getContent() {
+		return get("content");
 	}
 
 	public void setTitle(java.lang.String title) {
@@ -31,6 +31,14 @@ public abstract class BaseNews<M extends BaseNews<M>> extends Model<M> implement
 	
 	public java.lang.String getTitle() {
 		return getStr("title");
+	}
+
+	public void setFileGroupId(java.lang.String fileGroupId) {
+		set("fileGroupId", fileGroupId);
+	}
+	
+	public java.lang.String getFileGroupId() {
+		return getStr("fileGroupId");
 	}
 
 }

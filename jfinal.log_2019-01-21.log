@@ -1,0 +1,9 @@
+
+2019-01-21 16:45:03
+[WARN]-[Thread: qtp1588970020-18]-[com.jfinal.plugin.ehcache.CacheKit.getOrAddCache()]: Could not find cache config [loginAccount], using default.
+
+2019-01-21 16:50:08
+[WARN]-[Thread: qtp1588970020-18]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /imewis/msugg?ifc=4&em=4
+
+2019-01-21 16:50:11
+[WARN]-[Thread: qtp1588970020-15]-[com.jfinal.plugin.ehcache.CacheKit.getOrAddCache()]: Could not find cache config [loginAccount], using default.
