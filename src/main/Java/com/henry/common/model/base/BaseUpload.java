@@ -33,12 +33,12 @@ public abstract class BaseUpload<M extends BaseUpload<M>> extends Model<M> imple
 		return getStr("url");
 	}
 
-	public void setGroupId(java.lang.Integer groupId) {
+	public void setGroupId(java.lang.String groupId) {
 		set("groupId", groupId);
 	}
 	
-	public java.lang.Integer getGroupId() {
-		return getInt("groupId");
+	public java.lang.String getGroupId() {
+		return getStr("groupId");
 	}
 
 	public void setFileSize(java.lang.Double fileSize) {

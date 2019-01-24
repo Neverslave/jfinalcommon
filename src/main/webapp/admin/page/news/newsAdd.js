@@ -15,12 +15,14 @@ layui.config({
 
 	//渲染上传控件
 	var uploadList =$('#uploadList');
+	var uuid = generateUUID();
 	var uploadListIns = upload.render({
 		elem:'#upload',
 		url:'/upload/',
 		accept:'file',
 		multiple:true,
 		auto:false,
+		data:{uuid:uuid},
 		bindAction:'#testListAction',
 		choose:function (obj) {
             var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
@@ -112,3 +114,17 @@ layui.config({
 var E = window.wangEditor;
 var editor = new E('#toolbar','#news_content');
 editor.create();
+
+function generateUUID() {
+    var d = new Date().getTime();
+    if (window.performance && typeof window.performance.now === "function") {
+        d += performance.now(); //use high-precision timer if available
+    }
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
+}
+
