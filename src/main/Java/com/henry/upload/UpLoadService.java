@@ -32,10 +32,11 @@ public class UpLoadService {
         upload.setGroupId(groupId);
         upload.setFileName(fileName);
         upload.setFileSize(fileSize);
+        upload.setUrl(file.getPath());
         if(upload.save()){
-            ret.set("code",0);
+          return   ret.set("code",0);
         }
-     return ret.set("code",400);
+        return ret.set("code",400);
 
     }
 

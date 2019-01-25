@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>文章添加--layui后台管理模板</title>
+	<title>文章添加</title>
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -30,13 +30,13 @@
 			<div class="layui-inline">		
 				<label class="layui-form-label">发布时间</label>
 				<div class="layui-input-inline">
-					<input type="text" class="layui-input newsTime" lay-verify="required|date" >
+					<input type="text" class="layui-input newsTime" lay-verify="required" >
 				</div>
 			</div>
 			<div class="layui-inline">
 				<label class="layui-form-label">浏览权限</label>
 				<div class="layui-input-inline">
-					<select name="browseLook" class="newsLook" lay-filter="browseLook">
+					<select name="newsLook" class="newsLook" lay-filter="browseLook">
 				        <option value="0">开放浏览</option>
 				        <option value="1">不开放浏览</option>
 				    </select>
