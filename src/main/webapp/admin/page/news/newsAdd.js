@@ -79,7 +79,6 @@ layui.config({
  		addNews += '"newsLook":"'+$(".newsLook option").eq($(".newsLook").val()).text()+'",'; //开放浏览
  		addNews += '"newsTime":"'+$(".newsTime").val()+'",'; //发布时间
  		addNews += '"newsAuthor":"'+$(".newsAuthor").val()+'",'; //文章作者
- 		addNews += '"isShow":"'+ isShow +'",';  //是否展示
  		addNews += '"newsStatus":"'+ newsStatus +'"}'; //审核状态
 
 

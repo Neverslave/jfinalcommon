@@ -5,6 +5,7 @@ import com.henry.common.model.News;
 import com.henry.common.model.Newslist;
 import com.jfinal.kit.JsonKit;
 
+import javax.xml.ws.Action;
 import java.util.List;
 
 /***
@@ -22,8 +23,9 @@ public class NewsController extends BaseController {
      /**
       * 增加新闻，文章
       * */
+
      public void addNews(){
-         News news =  getBean(News.class);
+         News news   =  getBean(News.class);
          Newslist newslist =getBean(Newslist.class);
 
     }

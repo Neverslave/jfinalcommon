@@ -18,5 +18,6 @@ public class AdminRoute extends Routes {
         add("/admin/newslist", NewsController.class);
         add("/upload", UploadController.class);
 
+
     }
 }

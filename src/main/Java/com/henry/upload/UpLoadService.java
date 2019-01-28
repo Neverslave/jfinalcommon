@@ -3,7 +3,6 @@ package com.henry.upload;
 import com.henry.common.model.Upload;
 import com.jfinal.kit.Ret;
 import com.jfinal.kit.StrKit;
-import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.upload.UploadFile;
 
 import java.io.File;
