@@ -1,7 +1,7 @@
 #主要配置
-jdbcUrl=jdbc:mysql://47.100.23.51/myblog?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
-user=zhu
-password=zhuwanqi19940509
+jdbcUrl=jdbc:mysql://147.100.123.151/myblog?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+user=
+password=
 devMode=true
 engineDevMode=true
 
